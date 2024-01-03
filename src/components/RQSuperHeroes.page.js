@@ -11,7 +11,7 @@ export const RQSuperHeroesPage = () => {
     "super-heroes",
     fetchSuperHeroes,
     {
-      staleTime: 30000, // default 0
+      refetchInterval: 2000,
     }
   );
 
