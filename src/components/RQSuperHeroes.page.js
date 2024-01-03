@@ -1,6 +1,5 @@
 import { useQuery } from "react-query";
 import axios from "axios";
-import { useState } from "react";
 
 const fetchSuperHeroes = () => {
   return axios.get("http://localhost:4000/superheroes");
@@ -8,18 +7,12 @@ const fetchSuperHeroes = () => {
 };
 
 export const RQSuperHeroesPage = () => {
-  const [refetchInterval, setRefetchInterval] = useState(3000);
-
   const onSuccess = (data) => {
     console.log("Perform side effect after data fetching ", data);
-    if (data?.data.length === 4) {
-      setRefetchInterval(false);
-    }
   };
 
   const onError = (error) => {
     console.log("Perform side effect after encountering error ", error);
-    setRefetchInterval(false);
   };
 
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
@@ -28,7 +21,10 @@ export const RQSuperHeroesPage = () => {
     {
       onSuccess,
       onError,
-      refetchInterval,
+      select: (data) => {
+        const superHeroes = data.data.map((hero) => hero.name);
+        return superHeroes;
+      },
     }
   );
 
@@ -46,8 +42,11 @@ export const RQSuperHeroesPage = () => {
     <>
       <h2>React Query Super Heroes Page</h2>
       <button onClick={refetch}>Refetch heroes</button>
-      {data?.data.map((hero) => {
+      {/* {data?.data.map((hero) => {
         return <div key={hero.id}>{hero.name}</div>;
+      })} */}
+      {data.map((heroName) => {
+        return <div key={heroName}>{heroName}</div>;
       })}
     </>
   );
