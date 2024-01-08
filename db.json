@@ -34,5 +34,17 @@
       "id": 3,
       "name": "Rachel Green"
     }
+  ],
+  "users": [
+    {
+      "id": "yksa@example.com",
+      "channelId": "yksachannel"
+    }
+  ],
+  "channels": [
+    {
+      "id": "yksachannel",
+      "courses": ["react", "vue", "node"]
+    }
   ]
 }
