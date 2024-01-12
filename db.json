@@ -19,13 +19,18 @@
       "id": 4,
       "name": "Hulk",
       "alterEgo": "Bruce Banner"
+    },
+    {
+      "name": "The Flash",
+      "alterEgo": "Barry Allen",
+      "id": 5
     }
   ],
   "friends": [
     {
       "id": 1,
       "name": "Chandler Bing"
-    }, 
+    },
     {
       "id": 2,
       "name": "Joey Tribbiani"
@@ -44,7 +49,11 @@
   "channels": [
     {
       "id": "yksachannel",
-      "courses": ["react", "vue", "node"]
+      "courses": [
+        "react",
+        "vue",
+        "node"
+      ]
     }
   ],
   "colors": [
