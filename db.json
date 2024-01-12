@@ -29,6 +29,16 @@
       "name": "Shazam",
       "alterEgo": "Billy Batson",
       "id": 6
+    },
+    {
+      "name": "Green Arrow",
+      "alterEgo": "Oliver Queen",
+      "id": 7
+    },
+    {
+      "name": "Cat Woman",
+      "alterEgo": "Selina Kyle",
+      "id": 8
     }
   ],
   "friends": [
