@@ -27,6 +27,8 @@ export const RQSuperHeroesPage = () => {
     console.log({ name, alterEgo });
     const hero = { name, alterEgo };
     addHero(hero);
+    setName("");
+    setAlterEgo("");
   };
 
   if (isLoading) {
